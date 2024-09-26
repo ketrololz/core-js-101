@@ -19,7 +19,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(a, b) {
-  return a + b
+  return a + b;
 }
 
 
@@ -35,7 +35,7 @@ function concatenateStrings(a, b) {
  *   ''      => 0
  */
 function getStringLength(a) {
-  return a.length
+  return a.length;
 }
 
 /**
@@ -52,7 +52,7 @@ function getStringLength(a) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(a, b) {
-  return `Hello, ${a} ${b}!`
+  return `Hello, ${a} ${b}!`;
 }
 
 /**
@@ -66,7 +66,7 @@ function getStringFromTemplate(a, b) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(str) {
-  return str.slice(7, -1)
+  return str.slice(7, -1);
 }
 
 
@@ -81,7 +81,7 @@ function extractNameFromTemplate(str) {
  *   'cat'       => 'c'
  */
 function getFirstChar(str) {
-  return str[0]
+  return str[0];
 }
 
 /**
@@ -96,7 +96,7 @@ function getFirstChar(str) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(str) {
-  return str.trim()
+  return str.trim();
 }
 
 /**
@@ -111,7 +111,7 @@ function removeLeadingAndTrailingWhitespaces(str) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(a, b) {
-  return a.repeat(b)
+  return a.repeat(b);
 }
 
 /**
@@ -127,7 +127,7 @@ function repeatString(a, b) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(a, b) {
-  return a.replace(b, '')
+  return a.replace(b, '');
 }
 
 /**
@@ -142,7 +142,7 @@ function removeFirstOccurrences(a, b) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-  return str.slice(1, -1)
+  return str.slice(1, -1);
 }
 
 
@@ -157,7 +157,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-  return str.toUpperCase()
+  return str.toUpperCase();
 }
 
 /**
@@ -176,7 +176,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-  return str.split(';')
+  return str.split(';');
 }
 
 /**
@@ -203,8 +203,8 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-  let result = `┌${'─'.repeat(width - 2)}┐\n` + (`${'│'}${' '.repeat(width - 2)}${'│'}\n`).repeat(height - 2) + `└${'─'.repeat(width - 2)}┘\n`
-  return result
+  const result = `┌${'─'.repeat(width - 2)}┐\n${(`${'│'}${' '.repeat(width - 2)}${'│'}\n`).repeat(height - 2)}└${'─'.repeat(width - 2)}┘\n`;
+  return result;
 }
 
 
@@ -225,9 +225,9 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-  const cipher = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
-  return str.replace(/[A-z]/g, char => cipher[alphabet.indexOf(char)])
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const cipher = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+  return str.replace(/[A-z]/g, (char) => cipher[alphabet.indexOf(char)]);
 }
 
 /**
@@ -244,7 +244,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(a) {
-  return typeof a === 'string' || a instanceof String ? true : false
+  return !!(typeof a === 'string' || a instanceof String);
 }
 
 
@@ -273,8 +273,8 @@ function isString(a) {
  *   'K♠' => 51
  */
 function getCardId(a) {
-  const deck = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣','A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦','A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥','A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠']
-  return deck.indexOf(a)
+  const deck = ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣', 'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦', 'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥', 'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];
+  return deck.indexOf(a);
 }
 
 
