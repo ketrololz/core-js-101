@@ -52,7 +52,7 @@ function getCircleCircumference(r) {
  *  -3, 3  => 0
  */
 function getAverage(a, b) {
-  return BigInt((a / 2) + (b / 2));
+  return (a / 2) + (b / 2);
 }
 
 /**
@@ -87,7 +87,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-  return x = -(b / a);
+  return -(b / a);
 }
 
 
@@ -183,16 +183,24 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
+  let result = 0;
   switch (pow) {
     case 0:
-      return num;
+      result = num;
+      break;
     case 1:
-      return Math.round(num / 10) * 10;
+      result = Math.round(num / 10) * 10;
+      break;
     case 2:
-      return Math.round(num / 100) * 100;
+      result = Math.round(num / 100) * 100;
+      break;
     case 3:
-      return Math.round(num / 1000) * 1000;
+      result = Math.round(num / 1000) * 1000;
+      break;
+    default:
+      result = num;
   }
+  return result;
 }
 
 /**
